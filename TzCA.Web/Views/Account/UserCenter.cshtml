@@ -1,0 +1,142 @@
+﻿@{
+    //用户中心
+    ViewData["title"] = "用户中心";
+    Layout = "_IndexLayout";
+}
+
+@using TzCA.ViewModels.ApplicationOrganization
+@model ApplicationUserVM
+
+<div id="userCenterArea" class="userCenterArea wow bounceInRight" data-wow-duration="2s" data-wow-delay="1s">
+    <div class="area-left">
+        <div class="user-information">
+            <div class="user-avatar" id="editAvatar">
+                <i class="seraph icon-xiugai editAvatar" title="修改头像"></i>
+                <i title="@Model.Nickname" class="user-ident"></i>
+                <img class="avatar" src="@Model.MinAvatar" alt="@(Model.Nickname)的头像" title="修改头像" />
+            </div>
+            <div class="user-links">
+                <ul style="display:inline-block">
+                    <li>
+                        <a title="腾讯QQ" class="socialContactIcon tx-QQ" target="_blank" href="javascript:"></a>
+                    </li>
+                    <li>
+                        <a title="微信" class="socialContactIcon tx-WeChat" target="_blank" href="javascript:"></a>
+                    </li>
+                    <li>
+                        <a title="QQ空间" class="socialContactIcon tx-Qzone" target="_blank" href="javascript:"></a>
+                    </li>
+                    <li>
+                        <a title="新浪微博" class="socialContactIcon xl-Weibo" target="_blank" href="javascript:"></a>
+                    </li>
+                </ul>
+                @if (string.IsNullOrEmpty(Model.Remark))
+                {
+                    <p id="userDescription" class="tzEllipsis" style="color:#f1bc40">还没有个性签名，完善一下吧</p>
+                }
+                else
+                {
+                    <p id="userDescription" class="tzEllipsis" style="color:#f1bc40;width:229px;" title="@Model.Remark">@Model.Remark</p>
+                }
+            </div>
+            <p class="user-integrity">
+                信息完善度：<span class="userInfoIntegrity">100<span>%</span></span>
+                <a href="javascript:" onclick="" id="profileBtn">修改信息>></a>
+            </p>
+        </div>
+        <div class="user-nav">
+            <ul>
+                <li class="userNavActive"><a href="javascript:" data-tzAction="../../Account/Index" data-tzTarget="false" data-enName="UserIndex">首页</a></li>
+                <li><a href="javascript:" data-tzAction="../../Account/Profile" data-tzTarget="false" data-enName="Profile">个人信息</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="ChangePassword">修改密码</a></li>
+                <li><a href="javascript:" data-tzAction="../../Chat/Index" data-tzTarget="true" data-enName="Chat">云盟聊天</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="Safe">安全中心</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="Notice">消息中心</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="Todo">审核中心</a></li>
+                <li><a href="javascript:" data-tzAction="../../Account/Order" data-tzTarget="false" data-enName="Order">订单管理</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="Index">我的足迹</a></li>
+                <li><a href="javascript:" data-tzAction="" data-tzTarget="false" data-enName="Todo">反馈中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="area-right" id="userCenterMain">
+        <div class="area-right-head">
+            <h3 class="user-right-head-title wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="1.5s">首页</h3>
+        </div>
+        <div class="area-right-container">
+            @*根据左侧导航进行对应的页面填充区域*@
+        </div>
+    </div>
+
+    <div style="display: none" class="tailoring-container">
+        <div class="black-cloth" onclick="closeTailor(this)"></div>
+        <div class="tailoring-content">
+            <div class="close-tailoring" onclick="closeTailor(this)" title="关闭">×</div>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">自定义上传</li>
+                    <li class="systemAvatarBtn">系统头像</li>
+                </ul>
+                <div class="layui-tab-content" style="padding-top: 10px;">
+                    <div class="layui-tab-item layui-show">
+                        <div class="tailoring-content-one">
+                            <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+                                <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden" onchange="selectImg(this)">
+                                选择图片
+                            </label>
+                        </div>
+                        <div class="tailoring-content-two">
+                            <div class="tailoring-box-parcel">
+                                <img id="tailoringImg">
+                            </div>
+                            <div class="preview-box-parcel">
+                                <p>头像预览：</p>
+                                <div class="square previewImg"></div>
+                                <div class="circular previewImg"></div>
+                            </div>
+                        </div>
+                        <div class="tailoring-content-three">
+                            <button class="l-btn cropper-reset-btn">复位</button>
+                            <button class="l-btn cropper-rotate-btn">旋转</button>
+                            <button class="l-btn cropper-scaleX-btn">换向</button>
+                            <button class="tzModelCancel" style="float:right"> 取消 </button>
+                            <button class="l-btn sureCut" id="sureCut">确定</button>
+                            <button class="l-btn sureCut" id="sureCuting" disabled>
+                                <i class="loginLoading layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                                保存中...
+                            </button>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item systemAvatars">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(function () {
+            //设置页面导航激活
+            window.localStorage.setItem("navAcitve", "userCenter");
+            //刷新
+            loadActiveNav();
+        })
+    </script>
+    <environment names="Development">
+        <script src="~/js/Index/Account/userProfile.js" asp-append-version="true"></script>
+        <script src="~/js/Index/Account/userOrder.js" asp-append-version="true"></script>
+        <script src="~/js/Index/Account/GetViewForMenu.js" asp-append-version="true"></script>
+        <script src="~/js/Tz-AvatarUpload.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/MinJs/userProfile.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/userOrder.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/GetViewForMenu.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/Tz-AvatarUpload.min.js" asp-append-version="true"></script>
+    </environment>
+}

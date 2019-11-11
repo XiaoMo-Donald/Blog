@@ -1,0 +1,4 @@
+﻿原始地址：https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell
+应用说明：
+Add-Migration -Name "News005" -Project "Nncq.News.DataAccess"  -StartupProject "Nncq.News.Web"
+Update-Database -Migration "News005"  -Project "Nncq.News.DataAccess"  -StartupProject "Nncq.News.Web"

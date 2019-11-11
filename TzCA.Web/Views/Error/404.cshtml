@@ -1,0 +1,58 @@
+﻿@*一个404页面*@
+@{
+    //Layout = "_IndexLayout";
+    ViewData["title"] = "404,页面不见嘞~";
+}
+@*<div class="noFind wow bounce" data-wow-duration="0.5s" data-wow-delay="0s">
+        <div class="ufo">
+            <i class="seraph icon-test ufo_icon"></i>
+            <i class="layui-icon page_icon">&#xe638;</i>
+        </div>
+        <div class="page404">
+            <i class="layui-icon">&#xe61c;</i>
+            <p>我勒个去，页面被外星人挟持了!</p>
+        </div>
+    </div>*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>404,页面不见嘞~ - 云盟网络</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <environment include="Development">
+        <link rel="stylesheet" href="~/static/WebUI/Admin/layui/css/layui.css" media="all" />
+        <link rel="stylesheet" href="~/static/WebUI/Admin/css/public.css" media="all" />
+        <link rel="stylesheet" href="~/css/tzTheme.css" media="all" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/static/WebUI/Admin/layui/css/layui.css" media="all" />
+        <link rel="stylesheet" href="~/static/WebUI/Admin/css/public.css" media="all" />
+        <link rel="stylesheet" href="~/css/tzTheme.css" media="all" />
+    </environment>
+
+</head>
+<body class="childrenBody">
+    <div class="noFind">
+        <div class="ufo">
+            <i class="seraph icon-test ufo_icon"></i>
+            <i class="layui-icon page_icon">&#xe638;</i>
+        </div>
+        <div class="page404">
+            <i class="layui-icon">&#xe61c;</i>
+            <p>我勒个去，页面被外星人挟持了!</p>
+            <a href="/" class="layui-btn layui-btn-primary">返回首页</a>
+        </div>
+    </div>
+    <environment names="Development">
+        <script type="text/javascript" src="~/static/WebUI/Admin/layui/layui.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="~/static/WebUI/Admin/layui/layui.js"></script>
+    </environment>
+</body>
+</html>

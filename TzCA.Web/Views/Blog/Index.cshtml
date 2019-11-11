@@ -1,0 +1,109 @@
+﻿@{
+    Layout = "_IndexLayout";
+    ViewData["title"] = "站长博客";
+}
+
+@using TzCA.ViewModels.ApplicationOrganization
+@model ApplicationUserVM
+
+<div class="main-left wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.5s" id="main-left">
+    <!--1.默认主页左侧站长信息-->
+    <div id="xiaoMoShow">
+        <div class="xiaoMoShowProfile wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="1.3s">
+            <div class="xiaoMoShowProfile-avatar">
+                <img src="@Model.Avatar" alt="@Model.Nickname">
+            </div>
+            <i title="@Model.Nickname" class="author-ident"></i>
+            <div class="xiaoMoShowProfile-top">
+                <img src="~/images/index_bg_001.jpg" alt="">
+            </div>
+            <div class="xiaoMoShowProfile-bottom">
+                <h3>@Model.Nickname</h3>
+                <p><i class="layui-icon layui-icon-location"></i><span class="">@Model.Location</span></p>
+                <p><span>灵感</span> <span>代码</span> <span>梦想</span> <span>未来</span></p>
+                <p>喜欢尝试，期待新鲜事物</p>
+                <p>行路有良友，便是捷径</p>
+                <p>带上我吧，一起看到更大的世界</p>
+            </div>
+        </div>
+        <div id="tzIndexWeather" class="tzIndexWeather wow bounceIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+            <iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="//tianqi.eastday.com/plugin/widget_v1.html?sc=2&z=3&t=0&v=0&d=2&bd=0&k=&f=&q=1&a=1&c=59431&w=290&h=96&align=center"></iframe>
+            @*<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=48" width="275" height="45" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=10" width="218" height="25" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>*@
+        </div>
+        <div id="tzIndexDate" class="tzIndexDate wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="1.3s"></div>
+    </div>
+</div>
+
+<div class="main-right wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="1s" id="main-right tzRightMain">
+    <div class="blogArticleDetailArea wow" data-wow-duration="1.5s" data-wow-delay="0s" id="blogArticleDetailArea"></div>
+    <div class="main-right-head">
+        <h2 class="wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="1.5s">博客文章</h2>
+    </div>
+    <div class="main-right-content">
+        <ul class="blogArticleList">
+            @*<li class="blogArticleItem wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="2.5">
+                    <h3 class="blogTitle">
+                        <span>
+                            <a href="javascript:;" title="二颜" class="tzBlogLabel">大大二颜</a>
+                            <a href="javascript:;" title="技术" class="tzBlogLabel">技术</a>
+                            <a href="javascript:;" title="后台" class="tzBlogLabel">后台</a>
+                            <a href="javascript:;" title="前端" class="tzBlogLabel">前端</a>
+                        </span>
+                        <a class="blogTitleLink" href="javascript:">大大二颜の博客标题</a>
+                    </h3>
+                    <div class="blogPartInfo">
+                        <span class="blogThumbnail">
+                            <a href="javascript:;" title="高性能JSON解析框架FastJson简单使用">
+                                <img src="~/images/chatAvatars/userAvatar_16.jpeg" alt="高性能JSON解析框架FastJson简单使用">
+                            </a>
+                        </span>
+                        <p class="blogContent mult_line_ellipsis">
+                            fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。 fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。 fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。
+                            fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。 fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。 fastjson 是一个性能很好的 Java
+                            语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。下面这篇文章将详细介绍FastJson的使用，快速上手解决一切json解析问题。
+                        </p>
+                    </div>
+                    <div class="tzAuthor">
+                        <span class="authorIdent">
+                            <cite>大大二颜</cite>
+                            <i class="iconFont icon-ident" title="认证信息：管理员"></i>
+                            <i class="blogAuthorLevel layui-badge layui-bg-cyan">VIP3</i>
+                        </span>
+                        <span class="blogDTime">2018-07-14 星期一 22:00:01</span>
+                        <span class="blogViewNum">浏览（<a href="javascript:;" class="blogViewCount">265</a>）</span>
+                        <span class="blogCommitNum"><i class="iconFont blogCommitIcon" title="回复"></i>评论（<span class="blogCommitCount">0</span>）</span>
+                        <span class="blogReadMore">
+                            <a href="javascript:" class="tzBlogMore"><span class="layui-badge layui-btn">阅读全文&gt;&gt;</span></a>
+                        </span>
+                    </div>
+                    <div class="tzBlogLine"></div>
+                </li>*@
+        </ul>
+        <h2 id="tzBlogNoMore" class="tzBlogNoMore">暂无更多</h2>
+        <div class="tzBlogPaginationArea wow slideInUp" data-wow-duration="1.5s" data-wow-delay="4s">
+            <div id="tzBlogPage" class="tzBlogPage"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $(function () {
+            //设置页面导航激活
+            window.localStorage.setItem("navAcitve", "tzNavBlog");
+            //刷新
+            loadActiveNav();
+        })
+    </script>
+
+    <environment names="Development">
+        <script src="~/static/WebUI/Index/js/tzBlogArticleDetail.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/tzBlog.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/MinJs/tzBlogArticleDetail.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/tzBlog.min.js" asp-append-version="true"></script>
+    </environment>
+}

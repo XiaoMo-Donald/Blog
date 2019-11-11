@@ -1,0 +1,36 @@
+﻿@*未读消息模态框模板*@
+@using TzCA.ViewModels.TzPagination
+@using TzCA.ViewModels.Notifications
+@model PaginationOut<List<TzNotificationVM>>
+
+<ul class="oQNoticesList">
+    @*@{ if (Model.Data.Count > 0)
+        {
+            foreach (var item in Model.Data)
+            {
+                <li class="oQNoticeItem">
+                    <a href="javascript:">
+                        <i class="layui-icon layui-icon-log oQNoticeItemLogIcon"></i>
+                        <div class="oQNoticeItem-top">
+                            <div class="oQNoticeUserInfo">
+                                <img class="oQNoticeUserAvatar" src="@item.Sender.MinAvatar" alt="头像">
+                                <h3 class="oQNoticeUserNickname">来自：<span class="oQNoticeNickname">@item.Sender.Nickname</span></h3>
+                            </div>
+                        </div>
+                        <div class="oQNoticeItem-content" title="@item.Description">
+                            回复了你：@item.Description
+                        </div>
+                        <div class="oQNoticeItem-bottom">
+                            <span class="oQNoticeType">消息类型：<span class="oQNoticeItemType">@item.Source</span></span>
+                            <span class="oQNoticeItemTime" data-sendtime="@item.CreateTime"></span>
+                        </div>
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="oQNoticeItem"><p>暂无新的消息或未读消息Ծ‸Ծ。</p></li>
+        }
+    }*@
+</ul>

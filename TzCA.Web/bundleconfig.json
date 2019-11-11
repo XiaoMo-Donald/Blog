@@ -1,0 +1,424 @@
+[
+  {
+    "outputFileName": "wwwroot/css/MinCss/Tz-Chat.min.css",
+    "inputFiles": [
+      "wwwroot/css/Chat/Tz-Chat.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/jQueryvalidate.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/jQueryvalidate.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/loginAndRegister.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/loginAndRegister.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/verificationCode.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/verificationCode.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/userCenter.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/Account/css/userCenter.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/barrager.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/barrager.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/indexLayout.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/indexLayout.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/scrollbar.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/scrollbar.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/error.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/error.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/loginAndRegisterPartial.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/Account/css/loginAndRegisterPartial.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/tzTheme.min.css",
+    "inputFiles": [
+      "wwwroot/css/tzTheme.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/tzBlog.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/tzBlog.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/common.min.css",
+    "inputFiles": [
+      "wwwroot/css/common.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/tz_layui_font.min.css",
+    "inputFiles": [
+      "wwwroot/css/tz_layui_font.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/tzBlogArticleDetail.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/css/tzBlogArticleDetail.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/verify.min.css",
+    "inputFiles": [
+      "wwwroot/lib/tzVerify/css/verify.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/noticeModal.min.css",
+    "inputFiles": [
+      "wwwroot/css/Index/noticeModal.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/ourTeam.min.css",
+    "inputFiles": [
+      "wwwroot/css/Index/ourTeam.css"
+    ]
+  }, 
+   {
+    "outputFileName": "wwwroot/css/MinCss/userProfile.min.css",
+    "inputFiles": [
+      "wwwroot/css/Index/Account/userProfile.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/Admin/public.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/css/public.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/MinCss/Admin/index.min.css",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/css/index.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/UserLoginAndRegister.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index/UserLoginAndRegister.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Tz-Chat.min.js",
+    "inputFiles": [
+      "wwwroot/js/Tz-Chat.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/loginAndRegister.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/loginAndRegister.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/tzCloudAllianceHelper.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/tzCloudAllianceHelper.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/verificationCode.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/verificationCode.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/common.min.js",
+    "inputFiles": [
+      "wwwroot/js/common.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/loginAndRegisterPartial.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/Account/js/loginAndRegisterPartial.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/userCenter.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/Account/js/userCenter.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/indexLayout.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/indexLayout.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/userOrder.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index/Account/userOrder.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/GetViewForMenu.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index/Account/GetViewForMenu.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/tzBlog.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/tzBlog.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/TzModel.min.js",
+    "inputFiles": [
+      "wwwroot/js/TzModel.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Tz-AvatarUpload.min.js",
+    "inputFiles": [
+      "wwwroot/js/Tz-AvatarUpload.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/tzBlogArticleDetail.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Index/js/tzBlogArticleDetail.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/verify.min.js",
+    "inputFiles": [
+      "wwwroot/lib/tzVerify/js/verify.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Tz-Notification.min.js",
+    "inputFiles": [
+      "wwwroot/js/Tz-Notification.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/ourTeam.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index/ourTeam.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/userProfile.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index/Account/userProfile.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/Admin/adminLogin.min.js",
+    "inputFiles": [
+      "wwwroot/js/Admin/adminLogin.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/address.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/address.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/bodyTab.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/bodyTab.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/cache.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/cache.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/cacheUserInfo.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/cacheUserInfo.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/index.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/index.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/main.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/js/main.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/newsList.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/page/news/newsList.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/MinJs/Admin/newsAdd.min.js",
+    "inputFiles": [
+      "wwwroot/static/WebUI/Admin/page/news/newsAdd.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/Admin/verificationCode.min.js",
+    "inputFiles": [
+      "wwwroot/js/Admin/verificationCode.js"
+    ]
+  }
+]

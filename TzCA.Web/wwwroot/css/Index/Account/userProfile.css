@@ -1,0 +1,173 @@
+/*.userCenterArea {
+    width: 1500px;
+}
+
+.userCenterArea .area-right {
+    width: 1180px;
+}*/
+
+.tz-uc-profileArea { 
+    width: 100%;
+    height: auto;
+    height: 680px;
+}
+
+.tz-uc-profileArea-top {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+    .tz-uc-profileArea-top > .tz-uc-pr-t-left {
+        width: 250px;
+        height: auto;
+        position: relative;
+        text-align: center;
+        /* background: #333; */
+        float: left;
+    }
+
+.tz-uc-pr-t-left > img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #e6e6e6;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.tz-uc-pr-t-left > a {
+    margin: 8px 0;
+    /* color: #333; */
+    font-weight: 700;
+    display: block;
+}
+.tz-uc-pr-t-left>a>.editAvatar{
+    font-size:14px;
+}
+.tz-uc-pr-t-left > .experienceArea {
+    /* overflow: hidden; */
+}
+
+
+/* .experienceArea>.experienceTitle {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+} */
+
+.experienceArea > .experienceProgress {
+    width: 120px;
+    position: absolute;
+    left: 66px;
+    bottom: 25px;
+}
+
+.tz-uc-profileArea-top > .tz-uc-pr-t-right {
+    overflow: hidden;
+    float: left;
+    width: 890px;
+    min-width: 890px;
+}
+
+.tz-uc-pr-t-right > .right-col {
+    width: 445px;
+    height: 135px;
+    float: left;
+    line-height: 30px;
+}
+
+.right-col > .right-col-row {
+}
+
+    .right-col > .right-col-row > span:first-child {
+        width: 100px;
+        display: inline-block;
+        text-align: justify;
+        text-align-last: justify;
+    }
+
+    .right-col > .right-col-row > span:last-child {
+    }
+
+.tz-uc-profileArea-bottom {
+    padding: 20px 60px;
+    padding-top: 80px;
+}
+
+form[name=UserProfileForm] .layui-form-label {
+    width: 120px;
+    text-align: justify;
+    text-align-last: justify;
+    font-weight: 700;
+    color: #666;
+}
+
+form[name=UserProfileForm] .layui-form-item .inputEdit {
+    visibility: hidden;
+}
+
+form[name=UserProfileForm] .layui-form-item:hover .inputEdit {
+    visibility: initial;
+}
+
+.inputCAStyle:hover {
+    border-color: #fff !important;
+}
+
+
+/* form[name=UserProfileForm]>.layui-form-item>.layui-input-inline {
+    width: 300px;
+} */
+
+form[name=UserProfileForm] .tips {
+    color: red;
+    display: none;
+    font-size: 12px;
+}
+
+form[name=UserProfileForm] textarea[name=Remark] {
+    resize: none;
+    width: 280px;
+}
+
+form[name=UserProfileForm] > .userProfileForm-inputArea {
+    overflow: hidden;
+}
+
+form[name=UserProfileForm] .inputInline {
+    width: 270px;
+}
+
+form[name=UserProfileForm] .rightInputInline {
+    width: 280px;
+}
+
+form[name=UserProfileForm] > .userProfileForm-inputArea > .userProfileForm-left,
+form[name=UserProfileForm] > .userProfileForm-inputArea > .userProfileForm-right {
+    width: 520px;
+    float: left;
+}
+
+form[name=UserProfileForm] > .userProfileForm-btns {   
+    text-align: right;
+    display: none;
+    margin-top: 20px;
+}
+
+form[name=UserProfileForm] > .btnsShow {
+    display: block;
+}
+
+.inputCACommonStyle {
+     width: 100%!important; 
+}
+
+.inputCAStyle {
+    border-color: white;
+}
+
+.inputDefaultStyle {
+    border-color: #e6e6e6
+}

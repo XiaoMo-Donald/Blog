@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["title"] = "云盟用户";
+    Layout = "_IndexLayout";
+}
+
+<div class="tz-cloudTeamArea wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
+    @*<h2>云盟用户</h2>*@
+    <div class="cloud-index-breadcrumb">
+        <span class="layui-breadcrumb">         
+            <a href="/"><i class="layui-icon layui-icon-home"></i>首页</a>       
+            <a><cite>云盟用户</cite></a>
+        </span>
+    </div>
+    @*<h3>Cloud Alliance Users</h3>*@
+    <ul class="tz-cloudTeam-list">
+        @*@foreach (var user in Model)
+            {
+                <li class="tz-cloudTeam-item">
+                    <img src="@user.MinAvatar" alt="头像" title="头像">
+                    <a href="javascript:">个人主页</a>
+                    <h2>@user.Nickname</h2>
+                    <h3>认证：<span>云盟认证</span></h3>
+                    <div class="team-member-links">
+                        @foreach (var userLink in user.UserLinks)
+                        {
+                            <a href="@userLink.Link" target="@userLink.Target" title="@userLink.Name">@userLink.Name</a>
+                        }
+                    </div>
+                </li>
+            }*@
+
+    </ul>
+    <div class="tzCloudTeamPagingArea" id="tzCloudTeamPagingArea"></div>
+</div>
+@section Scripts{
+    <environment names="Development">
+        <script src="~/js/Index/ourTeam.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/MinJs/ourTeam.min.js" asp-append-version="true"></script>
+    </environment>
+}

@@ -1,0 +1,5 @@
+/* 重新样式 */
+
+.layui-form-item .error {
+    color: red;
+}

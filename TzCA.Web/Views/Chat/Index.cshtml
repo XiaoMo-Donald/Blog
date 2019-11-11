@@ -1,0 +1,256 @@
+﻿@{
+    //聊天室
+    ViewData["title"] = "云盟聊天室";
+    Layout = "_IndexLayout";
+}
+@using TzCA.ViewModels.ChatRoom
+@model TzChatUserVM
+@*<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="作者：二颜 邮箱（Studio@925i.cn）  云盟工作室（网络平台）：http://www.925i.cn">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>云盟聊天</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="云盟网络，给你不一样的网络体验！">
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/layer/theme/default/layer.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/layim/css/layim.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/Chat/Tz-Chat.css" asp-append-version="true" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/layer/theme/default/layer.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/layim/css/layim.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/Chat/Tz-Chat.min.css" asp-append-version="true" />
+        </environment>
+    </head>*@
+@*<body>*@
+<div class="tzCloundAllianceChatroom wow bounceInRight" data-wow-duration="2s" data-wow-delay="0s">
+    <div class="chatRoom" id="chatRoom" style="display:none">
+        <div class="chatPanel layui-layer-page layui-box layui-layim-chat" id="layui-layer3" type="page" times="3" showtime="0" contype="string" style="z-index: 19891017; width: 600px; top: 100px; left: 100px; min-width: 500px; min-height: 420px;">
+            <div class="layui-layer-title" style="cursor: move;">​</div>
+            <div id="layui-layim-chat" class="layui-layer-content">
+                <ul class="layui-unselect layim-chat-list">
+                    <li class="layim-friend1008612 layim-chatlist-friend1008612 layim-this" layim-event="tabChat"><img src="~/images/xiaomishu.png"><span>云盟小秘书</span><i class="layui-icon" layim-event="closeChat">ဇ</i></li>
+                </ul>
+                <div class="layim-chat-box">
+                    <div class="layim-chat layim-chat-friend layui-show">
+                        <div class="layui-unselect layim-chat-title">
+                            <div class="layim-chat-other">
+                                <img class="layim-friend1008612" id="userAvatar" src="~/images/xiaomishu.png">
+                                <span class="layim-chat-username" layim-event="" id="username">云盟小秘书</span>
+                                <p class="layim-chat-status" id="userRemark">代码在囧途，也要写到底</p>
+                                <input type="hidden" name="receiverConnectionId" value="" />
+                                @*<p class="layim-chat-status"></p>*@
+                            </div>
+                        </div>
+                        <div class="layim-chat-main">
+                            <ul>
+                                @*消息提示*@
+                                @*<li class="tz-chat-messageRecordArea">
+                                        <div class="tz-chat-messageRecordTips layim-chat-text">
+                                            还没有消息，先打个招呼吧！
+                                        </div>
+                                        <span class="tz-chat-hr"></span>
+                                    </li>
+                                    <li class="tz-chat-messageRecordArea">
+                                        <div class="tz-chat-messageRecordTips layim-chat-text">
+                                            历史消息&nbsp;<a href="javascript:" class="tz-chat-messageHistory">查看更多</a>
+                                        </div>
+                                        <span class="tz-chat-hr"></span>
+                                    </li>*@
+
+                                @*<li class="layim-chat-mine">
+                                        <div class="layim-chat-user"><img src="images/ErYan.jpg"><cite><i>2018-07-28 09:57:49</i>二颜</cite></div>
+                                        <div class="layim-chat-text">54646</div>
+                                    </li>
+                                    <li>
+                                        <div class="layim-chat-user"><img src="images/xiaomishu.png"><cite>云盟小秘书<i>2018-07-28 09:57:50</i></cite></div>
+                                        <div class="layim-chat-text"> 你慢慢说，别急……</div>
+                                    </li>*@
+                            </ul>
+                        </div>
+                        <div class="layim-chat-footer">
+                            <div class="layui-unselect layim-chat-tool">
+                                <span class="layui-icon layim-tool-face chatTodo" title="选择表情" layim-event="face"></span>
+                                <span class="layui-icon layim-tool-image chatTodo" title="上传图片" layim-event="image"><input type="file" name="file" disabled="disabled"></span>
+                                <span class="layui-icon layim-tool-image chatTodo" title="发送文件" layim-event="image" data-type="file"><input type="file" name="file" disabled="disabled"></span>
+                                <span class="layui-icon layim-tool-audio chatTodo" title="发送网络音频" layim-event="media" data-type="audio"></span>
+                                <span class="layui-icon layim-tool-video chatTodo" title="发送网络视频" layim-event="media" data-type="video"></span>
+                                <span class="layui-icon layui-icon-set chatTodo" title="设置">  </span>
+                                <span class="layim-tool-log chatTodo" layim-event="chatLog"><i class="layui-icon"></i>聊天记录</span>
+                            </div>
+                            <div class="layim-chat-textarea">
+                                <textarea></textarea>
+                            </div>
+                            <div class="layim-chat-bottom">
+                                <div class="layim-chat-send">
+                                    <span class="layim-send-close chatRoomClose" layim-event="closeThisChat">关闭</span><span class="layim-send-btn" layim-event="send" id="sendMessageBtn">发送</span><span class="layim-send-set" layim-event="setSend" lay-type="show"><em class="layui-edge"></em></span>
+                                    <ul class="layui-anim layim-menu-box">
+                                        <li class="layim-this" layim-event="setSend" lay-type="Enter"><i class="layui-icon"></i>按Enter键发送消息</li>
+                                        <li layim-event="setSend" lay-type="Ctrl+Enter"><i class="layui-icon"></i>按Ctrl+Enter键发送消息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="layui-layer-setwin"><a class="layui-layer-min" href="javascript:;"><cite></cite></a><a class="layui-layer-ico layui-layer-max" href="javascript:;"></a><a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;" title="关闭" id="chatRoomClose"></a></span>
+            <span class="layui-layer-resize"></span>
+        </div>
+    </div>
+    <div class="myFriends">
+        <div class="myFriendsPanel layui-layer-page layui-box layui-layim" id="layui-layer1" type="page" times="1" showtime="0" contype="string" style="z-index: 19891015; width: 260px; height: 520px; top: 100px; left: 750px; display: block;">
+            <div class="layui-layer-title" style="cursor: move;">​</div>
+            <div id="layui-layim" class="layui-layer-content" style="height: 410px;">
+                <div class="layui-layim-main">
+                    <div class="layui-layim-info">
+                        <div class="layui-layim-user">
+                            <span id="myName" data-myConnectionId="@Model.Id">
+
+                            </span>
+                        </div>
+                        <div class="layui-layim-status chatTodo">
+                            <span class="layui-icon layim-status-online" layim-event="status" lay-type="show"></span>
+                            <ul class="layui-anim layim-menu-box">
+                                <li class="layim-this" layim-event="status" lay-type="online"><i class="layui-icon"></i><cite class="layui-icon layim-status-online"></cite>在线</li>
+                                <li layim-event="status" lay-type="hide"><i class="layui-icon"></i><cite class="layui-icon layim-status-hide"></cite>隐身</li>
+                            </ul>
+                        </div><input class="layui-layim-remark" placeholder="编辑签名" value="talk is cheap,show me the code." disabled="disabled">
+                    </div>
+                    <ul class="layui-unselect layui-layim-tab">
+                        <li class="layui-icon layim-this " title="联系人" layim-event="tab" lay-type="friend"></li>
+                        <li class="layui-icon chatTodo" title="群组" layim-event="tab" lay-type="group"></li>
+                        <li class="layui-icon chatTodo" title="历史会话" layim-event="tab" lay-type="history"></li>
+                    </ul>
+                    <ul class="layui-unselect layim-tab-content layim-list-friend layui-show">
+                        <li>
+                            <h5 layim-event="spread" lay-type="false"><i class="layui-icon"></i><span>在线用户</span><em>(<cite class="layim-count" id="onlineUsersCount"> 0</cite>)</em></h5>
+                            <ul class="layui-layim-list" id="onlineUsers">
+                                @*<li layim-event="chat" data-type="friend" data-index="0" class="layim-friend666666 ">
+                                        <img src="images/ErYan.jpg"><span>徐小峥</span>
+                                        <p>代码在囧途，也要写到底</p><span class="layim-msg-status">new</span>
+                                    </li>*@
+                            </ul>
+                        </li>
+                        @*<li>
+                                <h5 layim-event="spread" lay-type="false"><i class="layui-icon"></i><span>网红声优</span><em>(<cite class="layim-count"> 5</cite>)</em></h5>
+                                <ul class="layui-layim-list ">
+                                    <li layim-event="chat" data-type="friend" data-index="1" class="layim-friend3435343 ">
+                                        <img src="images/ErYan.jpg"><span>柏雪近在它香</span>
+                                        <p></p><span class="layim-msg-status">new</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h5 layim-event="spread" lay-type="false"><i class="layui-icon"></i><span>女神艺人</span><em>(<cite class="layim-count"> 2</cite>)</em></h5>
+                                <ul class="layui-layim-list">
+                                    <li layim-event="chat" data-type="friend" data-index="2" class="layim-friend76543 ">
+                                        <img src="images/ErYan.jpg"><span>王小贤</span>
+                                        <p>我爱贤心</p><span class="layim-msg-status">new</span>
+                                    </li>
+                                    <li layim-event="chat" data-type="friend" data-index="2" class="layim-friend4803920 ">
+                                        <img src="images/ErYan.jpg"><span>佟小娅</span>
+                                        <p>我也爱贤心吖吖啊</p><span class="layim-msg-status">new</span>
+                                    </li>
+                                </ul>
+                            </li>*@
+                    </ul>
+                    <ul class="layui-unselect layim-tab-content">
+                        <li>
+                            <ul class="layui-layim-list layui-show layim-list-group">
+                                <li layim-event="chat" data-type="group" data-index="0" class="layim-group101 ">
+                                    <img src="~/images/ErYan.jpg"><span>前端群</span>
+                                    <p></p><span class="layim-msg-status">new</span>
+                                </li>
+                                <li layim-event="chat" data-type="group" data-index="1" class="layim-group102 ">
+                                    <img src="~/images/ErYan.jpg"><span>Fly社区官方群</span>
+                                    <p></p><span class="layim-msg-status">new</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="layui-unselect layim-tab-content">
+                        <li>
+                            <ul class="layui-layim-list layui-show layim-list-history">
+                                <li layim-event="chat" data-type="history" data-index="friend198909151014" class="layim-friend198909151014 ">
+                                    <img src="~/images/ErYan.jpg"><span>小酱</span>
+                                    <p></p><span class="layim-msg-status">new</span>
+                                </li>
+                                <li layim-event="chat" data-type="history" data-index="friend100001" class="layim-friend100001 ">
+                                    <img src="~/images/ErYan.jpg"><span>贤心</span>
+                                    <p>这些都是测试数据，实际使用请严格按照该格式返回</p><span class="layim-msg-status">new</span>
+                                </li>
+                                <li layim-event="chat" data-type="history" data-index="friend1008612" class="layim-friend1008612 ">
+                                    <img src="~/images/ErYan.jpg"><span>小闲</span>
+                                    <p></p><span class="layim-msg-status">new</span>
+                                </li>
+                                <li layim-event="chat" data-type="history" data-index="kefu2222222" class="layim-kefu2222222 ">
+                                    <img src="~/images/ErYan.jpg"><span>在线客服二</span>
+                                    <p></p><span class="layim-msg-status">new</span>
+                                </li>
+                                <li layim-event="chat" data-type="history" data-index="friend76543" class="layim-friend76543 ">
+                                    <img src="~/images/ErYan.jpg"><span>王祖贤</span>
+                                    <p>我爱贤心</p><span class="layim-msg-status">new</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="layui-unselect layim-tab-content">
+                        <li>
+                            <ul class="layui-layim-list layui-show" id="layui-layim-search"></ul>
+                        </li>
+                    </ul>
+                    <ul class="layui-unselect layui-layim-tool">
+                        <li class="layui-icon layim-tool-search chatTodo" layim-event="search" title="搜索"></li>
+                        <li class="layui-icon layim-tool-msgbox chatTodo" layim-event="msgbox" title="消息盒子"><span class="layui-anim"></span></li>
+                        <li class="layui-icon layim-tool-find chatTodo" layim-event="find" title="查找"></li>
+                        <li class="layui-icon layim-tool-skin chatTodo" layim-event="skin" title="更换背景"></li>
+                        <li class="layui-icon layui-icon-set userConfigure" layim-event="userConfigure" title="用户设置（临时注销）"> </li>
+                    </ul>
+                    <div class="layui-layim-search"><input><label class="layui-icon" layim-event="closeSearch">ဇ</label></div>
+                </div>
+            </div><span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;"></a></span>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(function () {
+            //设置页面导航激活          
+            window.localStorage.setItem("navAcitve", "userCenter");
+            //刷新
+            loadActiveNav();
+        })
+
+    </script>
+    <environment names="Development">
+        @*<script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+            <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+            <script src="~/lib/layer/layer.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/signalR/signalr.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/xss/dist/xss.js" asp-append-version="true"></script>*@
+        <script src="~/js/Tz-Chat.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        @*<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+            <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+            <script src="~/lib/layer/layer.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/signalR/signalr.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/xss/dist/xss.js" asp-append-version="true"></script>*@
+        <script src="~/js/MinJs/Tz-Chat.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@*</body>
+
+    </html>*@

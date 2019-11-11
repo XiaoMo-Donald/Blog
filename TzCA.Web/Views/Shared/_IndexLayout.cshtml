@@ -1,0 +1,374 @@
+﻿@*首页布局页面*@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"] - 奇创云盟</title>
+    <meta name="author" content="作者：二颜  工作室：http://www.925i.cn  工作室邮箱：Studio.925i.cn">
+    <meta name="keywords" content="小莫学长,MiMo-小莫学长,小莫云联盟,工作室,小莫QQ空间创意设计,爱酷吧免费资源分享,站长小莫绿色互联平台" />
+    <meta name="description" content="小莫云联盟工作室丨创意设计·资源分享·网络绿色互联平台,共创网赚平台,找伙伴,找资源,找素材,找特效就来小莫云联盟。" />
+    <!--视口检测-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport" />
+
+    <!--引入网页ICO图标 在网页的title 之前显示 第2个是书签ICO-->
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    <link rel="bookmark" href="~/favicon.ico" type="image/x-icon" />
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/layim/css/layim.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/layer/theme/default/layer.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/tz_layui_font.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/tzPraise/css/praise.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/ImgCropping/css/cropper.min.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/ImgCropping/css/ImgCropping.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/tzVerify/css/verify.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/common.css" asp-append-version="true" />
+        @*<link rel="stylesheet" href="~/lib/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/jQuery-emoji/dist/css/jquery.emoji.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/lib/jQuery-emoji-master/lib/css/jquery.mCustomScrollbar.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/jQuery-emoji-master/dist/css/jquery.emoji.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/scrollbar.css" media="all" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/indexLayout.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/barrager.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/Account/css/loginAndRegisterPartial.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/static/WebUI/Index/Account/css/userCenter.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/Chat/Tz-Chat.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/tzBlog.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/tzBlogArticleDetail.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/Index/ourTeam.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/Index/Account/userProfile.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/Index/noticeModal.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/tzTheme.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/layim/css/layim.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/layer/theme/default/layer.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/tz_layui_font.min.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/tzPraise/css/praise.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/ImgCropping/css/cropper.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/ImgCropping/css/ImgCropping.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/verify.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/common.min.css" asp-append-version="true" />
+        @*<link rel="stylesheet" href="~/lib/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/lib/jQuery-emoji/dist/css/jquery.emoji.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/lib/jQuery-emoji-master/lib/css/jquery.mCustomScrollbar.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/jQuery-emoji-master/dist/css/jquery.emoji.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/scrollbar.min.css" media="all" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/indexLayout.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/barrager.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/loginAndRegisterPartial.min.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/MinCss/userCenter.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/Tz-Chat.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/tzBlog.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/tzBlogArticleDetail.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/ourTeam.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/userProfile.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/noticeModal.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/MinCss/tzTheme.min.css" asp-append-version="true" />
+    </environment>
+</head>
+
+<body>
+    <!--浮动发个弹幕试试 代码开始-->
+    <div id="barrager_Botton" style="display:none;">
+        <a href="javascript:" id="barragerShow">
+            <img src="~/static/WebUI/Index/images/barrager.gif" alt="弹幕">
+            <span id="barrager_Show">发个弹幕试试</span>
+        </a>
+        <span id="barrager_Hidden">></span>
+    </div>
+    <div id="barrager_Content">
+        <div class="b_Content_title">
+            <span>发个弹幕试试吧</span><span id="b_Content_title_close" title="关闭">+</span>
+        </div>
+        <form>
+            <lable>弹幕内容：</lable>
+            <input name="info" type="text" placeholder="填写弹幕文字信息" />
+            <br>
+            <br>
+            <lable>弹幕链接：</lable>
+            <input name="href" type="text" placeholder="http://www.925i.cn" />
+            <!--<lable>弹幕延迟：</lable>-->
+            <!--<input name="speed" type="text" placeholder="6" value="6" />-->
+            <!--<lable>关闭按钮：</lable>-->
+            <!--<input name="close" type="checkbox" checked >-->
+            <!--<lable>高度随机：</lable>-->
+            <!--<input type="radio" name="bottomradio" value="0" checked="checked">-->
+            <!--<lable>弹幕图片：</lable>-->
+            <!--<input type="radio" name="img"  value="barrager.gif" checked="">-->
+            <!--<lable>文字颜色：</lable>-->
+            <!--<input type="text" value="fff" name="color">-->
+
+        </form>
+        <button onclick="run()">弹！弹！弹！</button>
+    </div>
+
+    <!--浮动发个弹幕试试 代码结束-->
+    <!--迷你资料卡代码开始-->
+    <div class="aboutXiaoMoMini" id="aboutXiaoMoMini">
+        <img src="~/static/WebUI/Index/images/avatar.jpg" alt="Mini-MiMo" id="miniAvatarDeg">
+        <a href="javascript:">站长资料卡</a>
+    </div>
+    <div class="aboutXiaoMo" id="aboutXiaoMo">
+        <div class="aTop">站长资料卡 <a href="javascript:" class="aClose" id="aClose">x</a></div>
+        <div class="aTimeNow" id="aTimeNow"></div>
+        <div class="aMyPic"><img src="~/static/WebUI/Index/images/XiaoMo-MiMo520.jpg" alt="小莫图片"><img src="~/static/WebUI/Index/images/xiaomoxuezhang.gif" alt="签名"></div>
+        <div class="aMyInfo">
+            <dl>
+                <dt><font class="afontSetdt">二ぅ颜</font>小莫云联盟创始人(www.925i.cn)</dt>
+                <dd>
+                    昵称：
+                    <font class="afontSetdd">小莫学长</font>
+                </dd>
+                <dd>
+                    个人特长：
+                    <font class="afontSetdd">特长就是没特长</font>
+                </dd>
+                <dd>
+                    身高：
+                    <font class="afontSetdd">1.00米</font>
+                </dd>
+                <dd>
+                    恋爱情况：
+                    <font class="afontSetdd">单身汪一枚</font>
+                </dd>
+                <dd>
+                    生日：
+                    <font class="afontSetdd">09.25</font>
+                </dd>
+                <dd>
+                    兴趣爱好：
+                    <font class="afontSetdd">听音乐、看动漫、K歌</font>
+                </dd>
+                <dd>
+                    星座：
+                    <font class="afontSetdd">天秤座</font>
+                </dd>
+                <dd>
+                    出生地：
+                    <font class="afontSetdd">中国 广西</font>
+                </dd>
+            </dl>
+        </div>
+        <div class="aMyWeiBo cl"><a href="javascript:">关注 站长小莫 的新浪微博</a></div>
+    </div>
+    <!--迷你资料卡代码结束-->
+    <!--网页头部-->
+    <header class="wow fadeInDown" data-wow-duration="1.2s" data-wow-delay="0s" style="visibility:hidden;">
+        <div class="head">
+            <div class="logo wow zoomInLeft" data-wow-duration="3s" data-wow-delay="0s">
+                <a href="/"><img src="~/images/cloudAlliance/logos/logo.png" class="wow flip" data-wow-duration="1.5s" data-wow-delay="6s" alt="奇创云盟"></a>
+            </div>
+            <div class="nav wow flipInX" data-wow-duration="2s" data-wow-delay="0s" id="nav">
+                <ul>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNavIndex" data-tzlinkto="/" data-wow-duration="1s" data-wow-delay="2s"><a href="javascript:">首页</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNavBlog" data-tzlinkto="../../Blog" data-wow-duration="1s" data-wow-delay="2.2s"><a href="javascript:">站长博客</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNav3" data-tzlinkto="" data-wow-duration="1s" data-wow-delay="2.4s"><a href="javascript:">产品中心</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNav4" data-tzlinkto="" data-wow-duration="1s" data-wow-delay="2.6s"><a href="javascript:">官方商城</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNavTimeLine" data-tzlinkto="" data-wow-duration="1s" data-wow-delay="2.8s"><a href="javascript:">发展历程</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNavCAUsers" data-tzlinkto="../../Home/CloudAllianceUsers" data-wow-duration="1s" data-wow-delay="3s"><a href="javascript:">云盟用户</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNav7" data-tzlinkto="" data-wow-duration="1s" data-wow-delay="3.2s"><a href="javascript:">关于站长</a></li>
+                    <li class="tzLink wow flipInY" data-tzlink="tzNav8" data-tzlinkto="" data-wow-duration="1s" data-wow-delay="3.4s"><a href="javascript:">关于本站</a></li>
+                </ul>
+            </div>
+            <div class="login wow slideInRight" data-wow-duration="1.2s" data-wow-delay="0s" id="indexLayoutLoginState">
+                <div class="userLoginStateAvatar">
+                    <a href="#">
+                        <img src="~/images/chatAvatars/defaultAvatar.jpg" alt="用户头像" class="avatar" id="userAvatarDeg">
+                    </a>
+                </div>
+                <div class="userLoginState" id="userLoginState">
+                    @*登录注册按钮填充区域*@
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="headSpace"></div>
+    <!--网页内容-->
+    <section class="sectionBGHidden">
+        <!--背景浮动的云-->
+        <div class="main_yun1"></div>
+        <div class="main_yun2"></div>
+        <div class="main_yun3"></div>
+
+        <div class="bgc">
+            <div class="loadMain wow fadeInDown" data-wow-duration="1.2s" data-wow-delay="0s" style="visibility:hidden;" id="loadMain">
+                <div class="loading wow zoomInUp" data-wow-duration="3s" data-wow-delay="2s" id="loading">
+                    <div class="loadingMark" id="loadingMark">
+                        <audio src="~/static/WebUI/Index/music/niconiconi.mp3" id="loadingAudio"></audio>
+                        <span class="loadingNow">开启<br />新纪元</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main" id="main">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
+    <!--网页底部-->
+    <footer class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+        <div class="footer">
+            <div class="foot">
+                <div class="foot-left">
+                    <img src="~/static/WebUI/Index/images/xiaomoxuezhang.gif" class="wow rubberBand" data-wow-duration="2s" data-wow-delay="1.5s" alt="站长签名和工作室标志">
+                    @*<img src="images/xiaomoxuezhangguaiguaiti.gif" alt="站长签名和工作室标志">*@
+                    <!--<video  autoplay="autoplay" width="450px" height="170px" preload="metadata">-->
+                    <!--<source src="mv/demo.mp4">-->
+                    <!--</video>-->
+                </div>
+                <div class="foot-center">
+                    <div class="guanFangLinks">
+                        <h2>合作媒体</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="http://www.qichuangit.com" target="_blank">奇创云盟</a></li>
+                                <li><a href="javascript:">某某某媒体</a></li>
+                                <li><a href="javascript:">某某某媒体</a></li>
+                                <li><a href="javascript:">某某某媒体</a></li>
+                                <li><a class="more" href="javascript:">More+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="guangGaoLinks">
+                        <h2>友情链接</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="http://www.qichuangit.com" target="_blank">奇创云盟</a></li>
+                                <li><a href="javascript:">友情链接</a></li>
+                                <li><a href="javascript:">友情链接</a></li>
+                                <li><a href="javascript:">友情链接</a></li>
+                                <li><a class="more" href="javascript:">More+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="allianceServiceLinks">
+                        <h2>官方服务</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="javascript:">服务条款</a></li>
+                                <li><a href="javascript:">广告服务</a></li>
+                                <li><a href="javascript:">建站服务</a></li>
+                                <li><a href="javascript:">关于本站</a></li>
+                                <li><a class="more" href="javascript:">More+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="foot-right">
+                    <div class="erweima wow bounceIn" data-wow-duration="2s" data-wow-delay="0s">
+                        <img src="~/images/cloudAlliance/wechatPlatform/erweima.jpg" alt="二维码" title="扫一扫关注微信公众号">
+                    </div>
+                    <div class="xiaomoLinks">
+                        <h2>关注站长动态</h2>
+                        <div class="btnwebLinks">
+                            <ul>
+                                <li><a href="javascript:">新浪微博</a></li>
+                                <li><a href="javascript:">技术Q群</a></li>
+                                <li><a href="javascript:">QQ空间</a></li>
+                                <li><a href="javascript:">微信公众号</a></li>
+                                <li><a href="javascript:">Github</a></li>
+                                <li><a href="javascript:">等待添加</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                Copyright&copy;<span id="copyDate"></span><a href="http://www.qichuangit.com" title="奇创云盟" class="footFontWeight">奇创云盟</a>&nbsp;All Right Reserved.&nbsp;
+                Power By <a href="javascript:" title="技术支持兼站长" class="footFontWeight">大大二颜</a>&nbsp;
+                <span>桂ICP备17000465号-1</span>&nbsp;
+                <span class="siteCount">
+                    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1274538249'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274538249%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                </span>
+                <div class="cloudAllianceRunTime">网站已勉强运行：<span></span></div>
+            </div>
+        </div>
+    </footer>
+
+    <environment names="Development">
+        @*<script src="~/lib/jQuery-emoji/lib/script/jquery.min.js" asp-append-version="true"></script>*@
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/signalR/signalr.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery.form.js" asp-append-version="true"></script>
+        <script src="~/lib/jquerySession/jquerySession.js" asp-append-version="true"></script>
+        <script src="~/lib/xss/dist/xss.min.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/tzCloudAllianceHelper.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+        <script src="~/lib/layer/layer.js" asp-append-version="true"></script>
+        <script src="~/js/TzModel.js" asp-append-version="true"></script>
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/lib/tzPraise/js/praise.js" asp-append-version="true"></script>
+        <script src="~/lib/ImgCropping/js/cropper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/lazyload/lazyload.js" asp-append-version="true"></script>
+        <script src="~/lib/toastr/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/lib/tzVerify/js/verify.js" asp-append-version="true"></script>
+        <script src="~/lib/tzTopLoadingBar/topbar.min.js" asp-append-version="true"></script>
+        <script src="~/js/common.js" asp-append-version="true"></script>
+        @*<script src="~/lib/jQuery-emoji/lib/script/jquery.min.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/jQuery-emoji/lib/script/highlight.pack.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/dist/js/jquery.emoji.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/tzJQueryEmoji.js" asp-append-version="true"></script>*@
+        <script src="~/lib/jQuery-emoji-master/lib/script/highlight.pack.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/jquery.mousewheel-3.0.6.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/src/js/jquery.emoji.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/tzJQueryEmoji.js" asp-append-version="true"></script>
+        <script src="~/js/Tz-Notification.js" asp-append-version="true"></script>
+        @*<script src="~/static/WebUI/Index/js/verificationCode.js" asp-append-version="true"></script>*@
+        @*<script src="~/static/WebUI/Index/Account/js/loginAndRegisterPartial.js" asp-append-version="true"></script>*@
+        <script src="~/static/WebUI/Index/js/indexLayout.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/jquery.barrager.min.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/Account/js/userCenter.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        @*<script src="~/lib/jQuery-emoji/lib/script/jquery.min.js" asp-append-version="true"></script>*@
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/signalR/signalr.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery.form.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquerySession/jquerySession.js" asp-append-version="true"></script>
+        <script src="~/lib/xss/dist/xss.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/tzCloudAllianceHelper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+        <script src="~/lib/layer/layer.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/TzModel.min.js" asp-append-version="true"></script>
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/lib/tzPraise/js/praise.js" asp-append-version="true"></script>
+        <script src="~/lib/ImgCropping/js/cropper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/lazyload/jquery.lazyload.min.js" asp-append-version="true"></script>
+        <script src="~/lib/toastr/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/js/Minjs/verify.min.js" asp-append-version="true"></script>
+        <script src="~/lib/tzTopLoadingBar/topbar.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/common.min.js" asp-append-version="true"></script>
+        @*<script src="~/lib/jQuery-emoji/lib/script/jquery.min.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/highlight.pack.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/dist/js/jquery.emoji.min.js" asp-append-version="true"></script>
+            <script src="~/lib/jQuery-emoji/lib/script/tzJQueryEmoji.js" asp-append-version="true"></script>*@
+        <script src="~/lib/jQuery-emoji-master/lib/script/highlight.pack.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/jquery.mousewheel-3.0.6.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/jquery.mCustomScrollbar.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/src/js/jquery.emoji.js" asp-append-version="true"></script>
+        <script src="~/lib/jQuery-emoji-master/lib/script/tzJQueryEmoji.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/Tz-Notification.min.js" asp-append-version="true"></script>
+        @*<script src="~/static/WebUI/Index/js/verificationCode.min.js" asp-append-version="true"></script>*@
+        @*<script src="~/static/WebUI/Index/Account/js/loginAndRegisterPartial.min.js" asp-append-version="true"></script>*@
+        <script src="~/js/MinJs/indexLayout.min.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/jquery.barrager.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/userCenter.min.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

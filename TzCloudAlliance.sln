@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.公共功能组件", "01.公共功能组件", "{818DBE14-E7F3-4116-8192-385C8A4767A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.业务实体模型", "02.业务实体模型", "{0224EE2D-D2D0-4E05-BF70-56604639AA96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.数据处理", "03.数据处理", "{E466322B-B96C-4B2F-9CD7-76F94D86D0AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.视图模型", "04.视图模型", "{2A06C2F9-3CA4-49A4-AE5E-1DDB5CECCD42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Web 站点", "05.Web 站点", "{B5533A77-0777-467A-808F-9BE528202D3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.Common", "TzCA.Common\TzCA.Common.csproj", "{3A8F3F69-390F-42C1-B6F8-0CF84F541C44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.Entities", "TzCA.Entities\TzCA.Entities.csproj", "{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.DataAccess", "TzCA.DataAccess\TzCA.DataAccess.csproj", "{073C5E49-395C-448A-ADDE-E4FCE2DBEF73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.ViewModels", "TzCA.ViewModels\TzCA.ViewModels.csproj", "{4350D209-C6AC-48CC-92EB-C390E56E2B90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.CustomMvcCoreExtension", "TzCA.CustomMvcCoreExtension\TzCA.CustomMvcCoreExtension.csproj", "{087B70A6-B4D2-44CB-A17F-854B5B752FD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.SignalR", "TzCA.SignalR\TzCA.SignalR.csproj", "{088CB763-B905-4B70-8E4C-81C1DA710121}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TzCA.Web", "TzCA.Web\TzCA.Web.csproj", "{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A8F3F69-390F-42C1-B6F8-0CF84F541C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8F3F69-390F-42C1-B6F8-0CF84F541C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8F3F69-390F-42C1-B6F8-0CF84F541C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8F3F69-390F-42C1-B6F8-0CF84F541C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073C5E49-395C-448A-ADDE-E4FCE2DBEF73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073C5E49-395C-448A-ADDE-E4FCE2DBEF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073C5E49-395C-448A-ADDE-E4FCE2DBEF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073C5E49-395C-448A-ADDE-E4FCE2DBEF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4350D209-C6AC-48CC-92EB-C390E56E2B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4350D209-C6AC-48CC-92EB-C390E56E2B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4350D209-C6AC-48CC-92EB-C390E56E2B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4350D209-C6AC-48CC-92EB-C390E56E2B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{087B70A6-B4D2-44CB-A17F-854B5B752FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{087B70A6-B4D2-44CB-A17F-854B5B752FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{087B70A6-B4D2-44CB-A17F-854B5B752FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{087B70A6-B4D2-44CB-A17F-854B5B752FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088CB763-B905-4B70-8E4C-81C1DA710121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088CB763-B905-4B70-8E4C-81C1DA710121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088CB763-B905-4B70-8E4C-81C1DA710121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088CB763-B905-4B70-8E4C-81C1DA710121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A8F3F69-390F-42C1-B6F8-0CF84F541C44} = {818DBE14-E7F3-4116-8192-385C8A4767A8}
+		{8B6576BD-9F4B-4685-9B8B-D91E0656A3DF} = {0224EE2D-D2D0-4E05-BF70-56604639AA96}
+		{073C5E49-395C-448A-ADDE-E4FCE2DBEF73} = {E466322B-B96C-4B2F-9CD7-76F94D86D0AB}
+		{4350D209-C6AC-48CC-92EB-C390E56E2B90} = {2A06C2F9-3CA4-49A4-AE5E-1DDB5CECCD42}
+		{087B70A6-B4D2-44CB-A17F-854B5B752FD5} = {2A06C2F9-3CA4-49A4-AE5E-1DDB5CECCD42}
+		{088CB763-B905-4B70-8E4C-81C1DA710121} = {818DBE14-E7F3-4116-8192-385C8A4767A8}
+		{6A02DD86-E83D-4E47-8F6E-B8C48C7221C3} = {B5533A77-0777-467A-808F-9BE528202D3A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7022B342-2320-4DB7-8103-5028B2E3E831}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://xiaomoalliancestudio.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TzCA.Entities\\TzCA.Entities.csproj
+		SccProjectTopLevelParentUniqueName1 = TzCloudAlliance.sln
+		SccProjectName1 = TzCA.Entities
+		SccLocalPath1 = TzCA.Entities
+		SccProjectUniqueName2 = TzCA.Common\\TzCA.Common.csproj
+		SccProjectTopLevelParentUniqueName2 = TzCloudAlliance.sln
+		SccProjectName2 = TzCA.Common
+		SccLocalPath2 = TzCA.Common
+		SccProjectUniqueName3 = TzCA.DataAccess\\TzCA.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName3 = TzCloudAlliance.sln
+		SccProjectName3 = TzCA.DataAccess
+		SccLocalPath3 = TzCA.DataAccess
+		SccProjectUniqueName4 = TzCA.ViewModels\\TzCA.ViewModels.csproj
+		SccProjectTopLevelParentUniqueName4 = TzCloudAlliance.sln
+		SccProjectName4 = TzCA.ViewModels
+		SccLocalPath4 = TzCA.ViewModels
+		SccProjectUniqueName5 = TzCA.CustomMvcCoreExtension\\TzCA.CustomMvcCoreExtension.csproj
+		SccProjectTopLevelParentUniqueName5 = TzCloudAlliance.sln
+		SccProjectName5 = TzCA.CustomMvcCoreExtension
+		SccLocalPath5 = TzCA.CustomMvcCoreExtension
+		SccProjectUniqueName6 = TzCA.SignalR\\TzCA.SignalR.csproj
+		SccProjectTopLevelParentUniqueName6 = TzCloudAlliance.sln
+		SccProjectName6 = TzCA.SignalR
+		SccLocalPath6 = TzCA.SignalR
+		SccProjectUniqueName7 = TzCA.Web\\TzCA.Web.csproj
+		SccProjectTopLevelParentUniqueName7 = TzCloudAlliance.sln
+		SccProjectName7 = TzCA.Web
+		SccLocalPath7 = TzCA.Web
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录 - 云盟后台管理</title>
+    <meta name="author" content="作者：二颜  工作室：http://www.925i.cn  工作室邮箱：Studio.925i.cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="小莫学长,MiMo-小莫学长,小莫云联盟,工作室,小莫QQ空间创意设计,爱酷吧免费资源分享,站长小莫绿色互联平台" />
+    <meta name="description" content="小莫云联盟工作室丨创意设计·资源分享·网络绿色互联平台,共创网赚平台,找伙伴,找资源,找素材,找特效就来小莫云联盟。" />
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    <link rel="bookmark" href="~/favicon.ico" type="image/x-icon" />
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/Admin/adminLogin.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/Admin/adminLogin.min.css" asp-append-version="true">
+    </environment>
+</head>
+
+<body>
+    <div class="loginAndRegisterArea wow zoomIn" data-wow-iteration="2s" data-wow-duration="1s" id="loginAndRegisterArea">
+        <div class="loginArea">
+            <img class="avatar wow zoomInDown" data-wow-duration="1s" data-wow-delay="0.5s" src="~/images/chatAvatars/defaultAvatar.jpg" alt="用户头像">
+            <form class="layui-form" name="LoginForm">
+                <input type="hidden" name="ReturnUrl" value="@TempData["returnUrl"]" />
+                @Html.AntiForgeryToken()
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Username">
+                        <i class=" layui-icon layui-icon-username"></i>
+                    </label>
+                    <input type="text" value="" name="Username" required lay-verify="required" placeholder="请输入用户名..." autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Password">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </label>
+                    <input type="password" value="" name="Password" required lay-verify="required" placeholder="请输入密码..." autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="VerificationCode">
+                        <i class="layui-icon layui-icon-vercode"></i>
+                    </label>
+                    <input type="text" name="VerificationCode" required lay-verify="required" maxlength="4" placeholder="请输入验证码..." autocomplete="off" class="layui-input">
+                    <canvas id="verificationCode" data-disabled="false"></canvas>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn loginStatusBtn" lay-filter="loginStatusBtn" disabled="disabled">
+                        <i class="loginLoading layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                        安全登录中...
+                    </button>
+                    <button class="layui-btn loginBtn" lay-submit lay-filter="loginBtn">
+                        <i class="layui-icon layui-icon-auz"></i>
+                        安全登录
+                    </button>
+                </div>
+                <div class="layui-form-item">
+                    <p>
+                        <a href="javascript:" title="云盟网络">2018&copy;小莫云联盟（网络工作室）</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/toastr/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/js/common.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/tzCloudAllianceHelper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/js/Admin/verificationCode.js" asp-append-version="true"></script>
+        <script src="~/js/Admin/adminLogin.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/toastr/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/common.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/tzCloudAllianceHelper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js" asp-append-version="true"></script>
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/js/Admin/verificationCode.min.js" asp-append-version="true"></script>
+        <script src="~/js/Admin/adminLogin.min.js" asp-append-version="true"></script>
+    </environment>
+</body>
+
+</html>

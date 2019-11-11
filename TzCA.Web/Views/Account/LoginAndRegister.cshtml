@@ -1,0 +1,173 @@
+﻿@*云盟登录页面*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="作者：二颜 邮箱（Studio@925i.cn）  云盟工作室（网络平台）：http://www.925i.cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录注册云盟</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="云盟网络，给你不一样的网络体验！">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/loginAndRegister.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/layui/css/layui.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/lib/wowjs/css/animate.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/static/WebUI/Index/css/loginAndRegister.min.css" asp-append-version="true">
+    </environment>
+</head>
+
+<body>
+    <div class="loginAndRegisterArea wow zoomIn" data-wow-iteration="2s" data-wow-duration="1s" id="loginAndRegisterArea">
+        <span id="formAntiForgeryToken">
+            @Html.AntiForgeryToken()
+        </span>
+        <div class="loginArea">
+            <img class="avatar wow zoomInDown" data-wow-duration="1s" data-wow-delay="0.5s" src="~/images/chatAvatars/defaultAvatar.jpg" alt="用户头像">
+            <form class="layui-form" name="LoginForm">
+                <span class="loginFormAntiForgeryToken">
+                    @*@Html.AntiForgeryToken()*@
+                </span>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Username">
+                        <i class=" layui-icon layui-icon-username"></i>
+                    </label>
+                    <input type="text" value="" name="Username" required lay-verify="required" maxlength="16" placeholder="请输入用户名..." autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Password">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </label>
+                    <input type="password" value="" name="Password" required lay-verify="required" maxlength="16" placeholder="请输入密码..." autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="VerificationCode">
+                        <i class="layui-icon layui-icon-vercode"></i>
+                    </label>
+                    <input type="text" name="VerificationCode" required lay-verify="required" maxlength="4" placeholder="请输入验证码..." autocomplete="off" class="layui-input loginVerificationCodeInput">
+                    <canvas id="verificationCode" class="loginVerificationCode" data-disabled="false"></canvas>
+                </div>
+                <div class="layui-form-item">
+                    <a href="javascript:" class="forgetPassword">忘记密码？</a>
+                    <a href="javascript:" class="goToRegister goToRegisterTab">还没有账号？立即注册</a>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn loginStatusBtn" lay-filter="loginStatusBtn" disabled="disabled">
+                        <i class="loginLoading layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                        安全登录中...
+                    </button>
+                    <button class="layui-btn loginBtn" lay-submit lay-filter="loginBtn">
+                        <i class="layui-icon layui-icon-auz"></i>
+                        安全登录
+                    </button>
+                </div>
+                <div class="layui-form-item">
+                    <p>
+                        <a href="javascript:" title="云盟网络">2018&copy;小莫云联盟（网络工作室）</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="registerArea">
+            <form class="layui-form" name="RegisterForm">
+                <span class="registerFormAntiForgeryToken">
+                    @*@Html.AntiForgeryToken()*@
+                </span>
+                <div class="layui-form-item">
+                    <h1 class="registerTitle wow flipInX" data-wow-duration="1s" data-wow-delay="0.5s">注册云盟</h1>
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Nickname">
+                        <i class="layui-icon layui-icon-face-smile"></i>
+                    </label>
+                    <input type="text" name="Nickname" required lay-verify="required" maxlength="12" placeholder="请输入昵称..." autocomplete="off" class="layui-input">
+                    <button type="button" class="layui-btn randomNickname" lay-filter="randomNickname">随机昵称</button>
+                </div>
+                <div class="layui-form-item layui-form-item-userName">
+                    <label class="user-login-icon" for="UserName">
+                        <i class="layui-icon layui-icon-username"></i>
+                    </label>
+                    <input type="text" value="" name="UserName" required lay-verify="required" maxlength="16" placeholder="请输入用户名..." autocomplete="off" class="layui-input">
+                    <span class="inputHelper usernameHelper">
+                        <i class="layui-icon layui-icon-about"></i>
+                    </span>
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="Password">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </label>
+                    <input type="password" value="" name="Password" required lay-verify="required" maxlength="16" placeholder="请输入密码..." autocomplete="off" class="layui-input">
+                    <span class="inputHelper passwordHelper">
+                        <i class="layui-icon layui-icon-about"></i>
+                    </span>
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="ConfirmPassword">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </label>
+                    <input type="password" value="" name="ConfirmPassword" required lay-verify="required" maxlength="16" placeholder="请再次确认密码..." autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="user-login-icon" for="VerificationCode">
+                        <i class="layui-icon layui-icon-vercode"></i>
+                    </label>
+                    <input type="text" name="VerificationCode" required lay-verify="required" maxlength="4" placeholder="请输入验证码..." autocomplete="off" class="layui-input registerVerificationCodeInput">
+                    <canvas id="verificationCode" class="registerVerificationCode" data-disabled="false"></canvas>
+                </div>
+                <div class="layui-form-item">
+                    <input type="checkbox" name="TermsOfUse" title="已阅读并同意本站条款。" lay-skin="primary" lay-filter="termsOfUse">
+                    <a href="javascript:" class="backLogin backLoginTab">已有账号？返回登录</a>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn registerStatusBtn" lay-filter="registerStatusBtn" disabled="disabled">
+                        <i class="loginLoading layui-icon layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i>
+                        正在注册...
+                    </button>
+                    <button class="layui-btn registerBtn" lay-submit lay-filter="registerBtn">
+                        立即注册
+                    </button>
+                </div>
+                <div class="layui-form-item">
+                    <p>
+                        <a href="javascript:" title="云盟网络">2018&copy;小莫云联盟（网络工作室）</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/xss/dist/xss.min.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/tzCloudAllianceHelper.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js"></script>
+        @*<script src="~/lib/layui/layui.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/layer/layer.js" asp-append-version="true"></script>*@
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/static/WebUI/Index/js/verificationCode.js" asp-append-version="true"></script>
+        <script src="~/js/Index/UserLoginAndRegister.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/xss/dist/xss.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/tzCloudAllianceHelper.min.js" asp-append-version="true"></script>
+        <script src="~/lib/layui/layui.all.js"></script>
+        @*<script src="~/lib/layui/layui.js" asp-append-version="true"></script>*@
+        @*<script src="~/lib/layer/layer.js" asp-append-version="true"></script>*@
+        <script src="~/lib/wowjs/js/wow.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/verificationCode.min.js" asp-append-version="true"></script>
+        <script src="~/js/MinJs/UserLoginAndRegister.min.js" asp-append-version="true"></script>
+    </environment>
+</body>
+
+</html>

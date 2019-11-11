@@ -1,0 +1,176 @@
+﻿
+@using TzCA.ViewModels.Blogs.ViewModels
+@model BlogArticleVM
+
+@{
+    Layout = null;
+    ViewData["title"] = Model.Name;
+}
+
+<div class="tzBlogArticleDetailArea" id="tzBlogArticleDetailArea" data-articleid="@Model.Id">
+    <div class="tzBlogArticleDetailHead">
+        <h2>
+            <a href="javascript:">@Model.Name</a>
+        </h2>
+        <!-- <div class="tzBlogArticleInfo">
+                <span class="tzBAR tzBlogArticleAuthorAvatar"><img src="./images/avatar.jpg" alt="大大二颜"></span>
+                <span class="tzBAR tzBlogArticleAuthorNickname">大大二颜</span>
+                <span class="tzBAR tzBlogArticleTime">2018-8-17 星期五 1小时前</span>
+                <span class="tzBAR tzBlogArticleViewCount">浏览（100）</span>
+                <span class="tzBAR tzBlogArticleComment">评论（0）</span>
+                <span class="tzBAR tzBlogArticleLabels">
+                            <span>标签：</span>
+                <a href="javascript:" title="技术">技术</a>
+                <a href="javascript:" title="后台">后台</a>
+                <a href="javascript:" title="前端">前端</a>
+                </span>
+        </div> -->
+        <div class="tzAuthor">
+            <span class="tzBAR tzBlogArticleAuthorAvatar"><img src="@Model.User.Avatar" alt="@Model.User.Nickname"></span>
+            <span class="authorIdent">
+                <span class="tzBAR tzBlogArticleAuthorNickname">@Model.User.Nickname</span>
+                <i class="iconFont icon-ident" title="认证信息：管理员"></i>
+                <i class="blogAuthorLevel layui-badge layui-bg-cyan">VIP</i>
+            </span>
+            <span class="blogDTime" data-articledtime="@Model.CreateTime"></span>
+            <span class="blogViewNum">浏览（<a href="javascript:;" class="blogViewCount">@Model.ViewCount</a>）</span>
+            <span class="blogCommitNum"><i class="iconFont blogCommitIcon" title="评论"></i>评论（<a href="javascript:;" class="blogCommitCount">@Model.Comments.Count</a>）</span>
+
+        </div>
+        <div class="tzBlogArticleDetailHeadBtns">
+            <div class=" layui-btn-group">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm tzBlogArticlePraiseUp" title="点个赞"><i class="layui-icon layui-icon-praise"></i><span class="articlePraiseUpCount">@Model.ArticlePraise.Up</span></button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm tzBlogArticlePraiseDown" title="踩一下"><i class="layui-icon layui-icon-tread"></i><span class="articlePraiseDownCount">@Model.ArticlePraise.Down</span></button>
+            </div>
+            <div class=" layui-btn-group">
+                <button class="layui-btn layui-btn-primary layui-btn-sm backBlogArticleList" title="返回列表"><i class="layui-icon layui-icon-return"></i></button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm" title="分享"><i class="layui-icon layui-icon-share"></i></button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm" title="复制链接"><i class="layui-icon layui-icon-link"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="tzBlogArticleDetailBody">
+        <div class="tzBlogArticleDetailContent">
+            @Html.Raw(Model.Description)
+        </div>
+        <div class="tzBlogArticleDetailCategory">
+            <span>
+                <i class="layui-icon layui-icon-template-1"></i>
+                文章分类：
+                @if (Model.Category != null)
+                {
+                    <a href="javascript:" title="@Model.Category.Description">@Model.Category.Name</a>
+                }
+            </span>
+            <span class="tzBAR tzBlogArticleLabels">
+                <span>标签：</span>
+                @if (Model.ArticleLabels != null || Model.ArticleLabels.Count > 0)
+                {
+                    foreach (var articleLabel in Model.ArticleLabels)
+                    {
+                        <a href="javascript:" title="@articleLabel.Name">@articleLabel.Name</a>
+                    }
+                }
+            </span>
+        </div>
+    </div>
+    <div class="tzBlogArticleAdvertisement">
+        <a href="javascript:"><img src="~/images/UploadImages/Advertisements/tzBlogArticleAD.gif" title="博客广告" alt="博客广告"></a>
+    </div>
+    <div class="tzCloudAllianceQuotations">
+        <ul>
+            <!-- 填充语录内容 -->
+        </ul>
+    </div>
+
+    <div class="tzBlogArticleDetailFoot">
+        <div class="tzBlogArticleCommentArea" id="tzBlogArticleCommentArea">
+            <form name="tzBlogArticleCommentForm" class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">评论留言区</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请说点什么吧..." class="layui-textarea articleCommentText" id="articleCommentText" name="CommentText"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <button type="button" class="layui-btn layui-btn-sm  tzBlogArticleCommentBtn" lay-filter="tzBlogArticleCommentBtn"><i class="layui-icon layui-icon-release"></i>发表</button>
+                </div>
+            </form>
+        </div>
+        <div class="tzBlogArticleCommentList">
+            <!-- 评论列表 -->
+            <h3>评论列表（<span class="tzFontColor blogCommitCount">@Model.Comments.Count</span>）</h3>
+            <ul>
+                @{
+                    if (Model.Comments == null)
+                    {
+                        <li class="tzBlogArticleCommentItem tzBlogArticleCommentItemNull">
+                            <h2>还没有任何评论Ծ‸Ծ</h2>
+                        </li>
+                    }
+                    else
+                    {
+                        foreach (var comment in Model.Comments)
+                        {
+                            <li class="tzBlogArticleCommentItem" data-commentid="@comment.Id">
+                                <div class="commentDetailTop">
+                                    <img class="commentatorAvatar" src="@comment.Reviewer.Avatar" alt="头像">
+                                    <div class="commentatorInfo">
+                                        <h4 class="commentNickname">
+                                            <a href="javascript:">@comment.Reviewer.Nickname</a>
+                                            <i class="iconFont icon-ident" title="认证信息"></i>
+                                            <i class="blogAuthorLevel layui-badge layui-bg-cyan">VIP</i>
+                                        </h4>
+                                        <div class="commentDateTime" data-commentdtime="@comment.CreateTime">
+                                            <span></span>
+                                        </div>
+                                        <div class="commentBtns">
+                                            @if (comment.IsDeleted)
+                                            {
+                                                <a href="javascript:" class="commentDelete" data-commentreplyid="@comment.Id">删除</a>
+                                            }
+                                            <a href="javascript:" class="commentReply" data-commentreplyuserid="@comment.Reviewer.Id"><i class="iconFont blogCommitIcon"></i>回复(<span class="commentReplysCount" id="@comment.Id">@comment.Replys.Count()</span>)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="commentDetailContent">
+                                    <p>@comment.Description</p>
+                                    <div class="commentReplyItemFormArea"></div>
+                                </div>
+                                <ul class="commentReplyList">
+                                    @if (comment.Replys != null)
+                                    {
+                                        foreach (var reply in comment.Replys)
+                                        {
+                                            <li class="commentReplyItem" data-id="@reply.Id">
+                                                <img class="commentReplyUserAvatar" src="@reply.Respondent.Avatar" alt="@(reply.Respondent.Nickname+"的头像")">
+                                                <div class="commentReplyUserDetailInfo">
+                                                    <a href="javascript:" class="replyBtn">@reply.Respondent.Nickname</a>
+                                                    <span>&nbsp;回复&nbsp;</span>
+                                                    <a href="javascript:" title="@(reply.ReceiveRespondent.Nickname+"的迷你资料卡")">@reply.ReceiveRespondent.Nickname</a>
+                                                    <span>：</span>
+                                                    <span class="commentReplyContent">@reply.Description</span>
+                                                    <div class="commentReplyItemTime" data-commentreplydtime="@reply.CreateTime">
+                                                        <span></span>
+                                                        @if (reply.IsDeleted)
+                                                        {
+                                                            <a class="commentReplyItemDeleteBtn" href="javascript:" data-commentreplyid="@reply.Id" title="删除">删除</a>
+                                                        }
+                                                        <a class="commentReplyItemBtn" href="javascript:" data-userid="@reply.Respondent.Id" title="回复">回复</a>
+                                                    </div>
+                                                    <div class="commentReplyItemFormArea"></div>
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>
+    <div class="tzBlogArticleBottomSpace"></div>
+</div>

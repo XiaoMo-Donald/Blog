@@ -1,0 +1,67 @@
+/* 主题颜色 */
+
+
+/* 重写layui颜色开始  */
+
+.layui-btn {
+    background-color: #62bcfa;
+}
+
+.layim-chat-mine .layim-chat-text:after,
+.layim-chat-mine .layim-chat-text,
+.layui-layim-tab li.layim-this:after,
+.layui-laydate > .layui-this,
+.layim-chat-send>span,
+.layim-chat-send>span:hover,
+.layim-chat-send>span:active,
+.layui-laypage-em {
+    background-color: #62bcfa !important;
+}
+.layim-chat-send .layim-send-set{
+    border-left:1px solid #a0d6fb;
+}
+.layim-chat-mine > .layim-chat-text:after {
+    border-top-color: #62bcfa;
+    background: rgba(255,255,255,.0) !important;
+}
+
+.layui-tab-brief > .layui-tab-title .layui-this,
+.layui-laypage a:hover {
+    color: #62bcfa;
+}
+
+.layui-btn-danger {
+    background-color: #FF5722;
+}
+
+.layui-btn-primary {
+    background-color: #fff;
+}
+
+.layui-tab-brief > .layui-tab-more li.layui-this:after,
+.layui-tab-brief > .layui-tab-title .layui-this:after {
+    border-bottom: 2px solid #62bcfa;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #62bcfa !important;
+    background-color: #62bcfa !important;
+}
+
+.layui-laydate > .layui-laydate-main > .layui-laydate-content > table > tbody > tr > .layui-this {
+    background-color: #62bcfa !important;
+}
+
+.layui-laydate > .layui-laydate-main > .layui-laydate-content > table > tbody > tr > td.laydate-selected {
+    background-color: #bbe3ff !important;
+}
+
+
+/* 重写layui颜色结束  */
+
+.layui-layer-page>.layui-layer-btn {
+    text-align: center;
+}
+.tzModelContent{
+    padding:20px;
+}

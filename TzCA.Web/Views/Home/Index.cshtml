@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_IndexLayout";
+    ViewData["title"] = "首页";
+}
+
+@using TzCA.ViewModels.ApplicationOrganization
+@model ApplicationUserVM
+@{
+    var avatar = string.IsNullOrEmpty(Model.MinAvatar) ? "../../images/ErYan.jpg" : Model.MinAvatar;
+    var nickname = string.IsNullOrEmpty(Model.Nickname) ? "大大二颜" : Model.Nickname;
+}
+<div class="main-left wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0.5s" id="main-left">
+    <!--1.默认主页左侧站长信息-->
+    <div id="xiaoMoShow">
+        <div class="xiaoMoShowProfile wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="1.3s">
+            <div class="xiaoMoShowProfile-avatar">
+                <img src="@avatar" alt="@nickname">
+            </div>
+            <i title="@nickname" class="author-ident"></i>
+            <div class="xiaoMoShowProfile-top">
+                <img src="~/images/index_bg_001.jpg" alt="">
+            </div>
+            <div class="xiaoMoShowProfile-bottom">
+                <h3>@nickname</h3>
+                <p><i class="layui-icon layui-icon-location"></i><span class="">@Model.Location</span></p>
+                <p><span>灵感</span> <span>代码</span> <span>梦想</span> <span>未来</span></p>
+                <p>喜欢尝试，期待新鲜事物</p>
+                <p>行路有良友，便是捷径</p>
+                <p>带上我吧，一起看到更大的世界</p>
+            </div>
+        </div>
+        <div id="tzIndexWeather" class="tzIndexWeather wow bounceIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+            <iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="//tianqi.eastday.com/plugin/widget_v1.html?sc=2&z=3&t=0&v=0&d=2&bd=0&k=&f=&q=1&a=1&c=59431&w=290&h=96&align=center"></iframe>
+            @*<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=48" width="275" height="45" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=10" width="218" height="25" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>*@
+        </div>
+        <div id="tzIndexDate" class="tzIndexDate wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="1.3s"></div>
+    </div>
+</div>
+
+<div class="main-right  wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="1s" id="main-right tzRightMain">
+    <div class="main-right-head">
+        <h2 class="wow bounceInLeft" data-wow-duration="1.5s" data-wow-delay="1.5s">首页</h2>
+    </div>
+    <div class="main-right-content">
+
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(function () {
+            //设置页面导航激活
+            window.localStorage.setItem("navAcitve", "tzNavIndex");
+            //刷新
+            loadActiveNav();
+        })
+    </script>
+}

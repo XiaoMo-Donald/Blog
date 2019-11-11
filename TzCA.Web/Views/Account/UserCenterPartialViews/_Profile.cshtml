@@ -1,0 +1,201 @@
+﻿@using TzCA.Entities.ApplicationOrganization.Other
+@using TzCA.ViewModels.ApplicationOrganization
+@model ApplicationUserDto
+
+<div class="tz-uc-profileArea">
+    <div class="tz-uc-profileArea-top">
+        <div class="tz-uc-pr-t-left">
+            <img src="@Model?.MinAvatar" class="avatar" alt="头像" title="头像">
+            <a href="javascript:" class="editAvatarBtn">
+                修改头像
+                <i class="seraph icon-xiugai editAvatar" title="修改头像"></i>
+            </a>
+            <!-- <div class="experienceArea">
+                <div class="experienceProgress">
+                    <div class="layui-progress layui-progress-big" lay-showpercent="true">
+                        <div class="layui-progress-bar layui-bg-orange" lay-percent="30%"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="tz-uc-pr-t-right">
+            <div class="right-col">
+                <div class="right-col-row">
+                    <span>用户名：</span>
+                    <span>@Model?.UserName</span>
+                </div>
+                <div class="right-col-row">
+                    <span>用户昵称：</span>
+                    <span>@Model?.Nickname</span>
+                </div>
+                <div class="right-col-row">
+                    <span>用户等级：</span>
+                    <span>@Model?.Level</span>
+                </div>
+                <div class="right-col-row">
+                    <span>上次登录时间：</span>
+                    <span>@Model?.LastLoginTime</span>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="right-col-row">
+                    <span>上次登录IP：</span>
+                    <span>@Model?.LastLoginIP</span>
+                </div>
+                <div class="right-col-row">
+                    <span>当前登录IP：</span>
+                    <span>@Model?.CurrentLoginIP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tz-uc-profileArea-bottom">
+        <form class="layui-form" name="UserProfileForm" action="">
+            <div class="userProfileForm-inputArea">
+                <div class="userProfileForm-left">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户名：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.UserName" disabled autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户昵称：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.Nickname" disabled name="Nickname" required lay-verify="nickname" placeholder="请输入昵称..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">我的生日：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.Birthday" disabled name="Birthday" readonly="" id="birthday" lay-verify="birthday" placeholder="请输入生日..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle birthday">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">我的位置：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.Location" disabled name="Location" lay-verify="location" placeholder="请输入位置..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">QQ号码：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.QQ" disabled name="QQ" lay-verify="qq" placeholder="请输入QQ号码..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">QQ链接：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.UserLinks.FirstOrDefault(x=>x.Type.Equals(UserLinkType.QQ))?.Link" disabled name="QQLink" lay-verify="tzUrl" placeholder="(http)请输入QQ链接..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微博链接：</label>
+                        <div class="layui-input-inline inputInline">
+                            <input type="text" value="@Model?.UserLinks.FirstOrDefault(x=>x.Type.Equals(UserLinkType.Weibo))?.Link" disabled name="WeiboLink" lay-verify="tzUrl" placeholder="(http)请输入微博链接" autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="userProfileForm-right">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Github链接：</label>
+                        <div class="layui-input-inline rightInputInline">
+                            <input type="text" value="@Model?.UserLinks.FirstOrDefault(x=>x.Type.Equals(UserLinkType.Github))?.Link" disabled name="GithubLink" lay-verify="tzUrl" placeholder="(http)请输入Github链接..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">个人网站：</label>
+                        <div class="layui-input-inline rightInputInline">
+                            <input type="text" value="@Model?.UserLinks.FirstOrDefault(x=>x.Type.Equals(UserLinkType.ProSite))?.Link" disabled name="ProSiteLink" lay-verify="tzUrl" placeholder="(http)请输入个人网站链接..." autocomplete="off" class="layui-input inputCACommonStyle inputCAStyle">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">个性签名：</label>
+                        <div class="layui-input-inline rightInputInline">
+                            <textarea disabled name="Remark" placeholder="请输入个性签名..." class="layui-textarea inputCACommonStyle inputCAStyle">@Model?.Remark</textarea>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <a href="javascript:" title="编辑" class="inputEdit">
+                                <i class="layui-icon layui-icon-edit"></i>
+                            </a>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="tips">未保存</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="userProfileForm-btns">
+                <div class="layui-form-item">
+                    <button type="button" class="layui-btn userProFileSaveBtn" lay-submit="" lay-filter="userProFileSaveBtn">保存修改</button>
+                    <button type="button" class="layui-btn layui-btn-primary userProFileCancelBtn">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
